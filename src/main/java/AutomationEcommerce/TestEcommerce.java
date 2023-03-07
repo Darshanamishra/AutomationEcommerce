@@ -43,7 +43,7 @@ public class TestEcommerce {
 				.sendKeys(UserLogin.get("username").toString());
 		d.findElement(By.name("password")).sendKeys(UserLogin.get("password").toString());
 		d.findElement(By.xpath("//button[.='Login']")).click();
-		ActualResult = d.findElement(By.xpath("//a[contains(.,'Logged in as Robin Smith')]")).getText().toString();
+		ActualResult = d.findElement(By.xpath("//a[contains(.,'Logged in as Robin Smith')]")).getText();
 		// Validating valid login A/c
 		Assert.assertTrue(ActualResult.contains(ExpectedResult));
 		d.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -51,6 +51,7 @@ public class TestEcommerce {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void Registration() {
 		JavascriptExecutor js = (JavascriptExecutor) d;
@@ -110,7 +111,7 @@ public class TestEcommerce {
 			System.out.println("Account already exist");
 		}
 	}
-
+	@SuppressWarnings("deprecation")
 	@Test
 	public void ProductSearch() throws Exception {
 
@@ -123,7 +124,7 @@ public class TestEcommerce {
 		d.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		d.findElement(By.xpath("//a[@href='/product_details/2']")).click();
 		d.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		ActualResult = d.findElement(By.xpath("//h2[.='Men Tshirt']")).getText().toString();
+		ActualResult = d.findElement(By.xpath("//h2[.='Men Tshirt']")).getText();
 		// Result Accuracy check
 		SoftAssertion.assertTrue(ActualResult.contains(ExpectedResult));
 		System.out.println(ActualResult);
