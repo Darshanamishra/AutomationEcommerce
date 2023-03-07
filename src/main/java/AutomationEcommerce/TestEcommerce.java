@@ -135,7 +135,6 @@ public class TestEcommerce {
 	@AfterTest
 	public void Teardown() {
 		d.quit();
-		;
 	}
 
 }
