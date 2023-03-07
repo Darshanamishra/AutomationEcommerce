@@ -50,9 +50,9 @@ public class TestEcommerce {
 		d.findElement(By.xpath("//a[contains(.,'Logout')]")).click();
 	}
 
-	@SuppressWarnings("deprecation")
+
 	@Test
-	public void Registartion() {
+	public void Registration() {
 		JavascriptExecutor js = (JavascriptExecutor) d;
 		ActualResult = "Automation Exercise - Signup / Login";
 		d.get("https://automationexercise.com/login");
@@ -111,7 +111,6 @@ public class TestEcommerce {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void ProductSearch() throws Exception {
 
